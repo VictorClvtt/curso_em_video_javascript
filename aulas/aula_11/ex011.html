@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidades</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            gap: 20px;
+        }
+
+        input{
+            font-size: 20px;
+            padding: 5px 10px;
+        }
+
+        .info{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>De qual país você vem?</h1>
+    <input type="text" id="pais" placeholder="Digite seu país aqui." onkeypress="handleKeyPress(event)">
+    <div class="info">
+        <span id="img"></span>
+        <span id="msg"></span>
+    </div>
+
+    <script>
+        function handleKeyPress(event) {
+            if (event.key === "Enter" || event.keyCode === 13) {
+            submitCountry();
+            }
+        }
+
+        function submitCountry(){
+            var pais = document.getElementById('pais').value.toLowerCase()
+            
+            document.getElementById('img').innerHTML = `<img src="https://paginas.fe.up.pt/~fff/Homepage/Bandeiras/Imagens/${pais}_ani.gif" alt="${pais}">`
+
+            if(pais=='brasil'){
+                document.getElementById('msg').innerText = 'Olá compatriota 😎'
+            }else{
+                document.getElementById('msg').innerText = 'Você é estrangeiro 🫤' 
+            }
+        }
+    </script>
+</body>
+</html>

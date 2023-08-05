@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #area{
+            font-size: 20pt;
+            background: rgb(48, 214, 114);
+            color: rgb(0, 0, 0);
+            height: 200px;
+            width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseleave="sair()" onmousemove="mover()">
+        Interaja...
+    </div>
+
+    <script>
+        cont = 0
+
+        function clicar(){
+            var area = document.getElementById('area')
+
+            cont++
+            if(cont==1){
+            area.innerText = `Clicou ${cont} vez :)`
+            }else{
+                area.innerText = `Clicou ${cont} vezes :)`
+            }
+        }
+
+        function entrar(){
+            var area = document.getElementById('area')
+
+            area.innerText = 'Oi :D'
+        }
+
+        function sair(){
+            var area = document.getElementById('area')
+
+            area.innerText = 'Volta aqui :('
+        }
+
+        function getRandomNumber() {
+            return Math.floor(Math.random() * 256);
+        }
+
+        function mover(){
+            var area = document.getElementById('area')
+
+            area.style.background = `rgb(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()})`
+        }
+    </script>
+</body>
+</html>

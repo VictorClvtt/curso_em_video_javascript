@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro programa...</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: rgb(58, 58, 96);
+            color: rgb(255, 255, 255);
+            font: normal 25pt Arial;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        span{
+            margin-top: 30px;
+            padding: 5px 10px;
+            border: 1px solid black;
+            box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.75);
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, mundo!</h1>
+    <p>Já me livrei da maldição 😪</p>
+
+    <span id="resultado">Resultado: </span>
+
+    <script>
+
+        var i = true
+
+        while (i){
+            var n1 = Number(prompt('Digite um número:'))
+            var n2 = Number(prompt('Digite outro número:'))
+
+            if (isNaN(n1) || isNaN(n2)){
+                alert('Por favor, digite apenas números.')
+            }else{
+                var soma = n1+n2
+                alert(`O resultado da soma é: ${soma}`)
+                document.getElementById('resultado').innerHTML = `Resultado: ${soma}`
+                i = false
+            }
+        }
+    </script>
+</body>
+</html>
