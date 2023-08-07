@@ -3,22 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo de Exercício</title>
+    <title>Verificador de Idade</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Título</h1>
+        <h1>Verificador de Idade</h1>
     </header>
 
     <section>
         <div>
-            Testando...
+            <p>Ano de nascimento:</p>
+            <input type="number" id="ano">
         </div>
 
         <div>
-            Olá Mundo!
+            <p>Sexo:</p>
+            <ul>
+                <li>
+                    <input type="radio" name="sexo" id="fem">
+                    <label for="fem">Feminino</label>
+                </li>
+                <li>
+                    <input type="radio" name="sexo" id="masc">
+                    <label for="masc">Masculino</label>
+                </li>
+            </ul>
         </div>
+
+        <input type="submit" value="Verificar" class="verificar" onclick="handleClick()">
+
+        <p style="font-size: 22px; display: none;">Detectamos <span id="genero"></span> com <span id="idade"></span> anos.</p>
+        <span id="imgIn" style="display: none;"></span>
     </section>
 
     <footer>
