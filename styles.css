@@ -52,7 +52,7 @@ section{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(114deg, rgb(56, 149, 126) 10%, rgb(70, 185, 166) 60%);
+    background: rgb(70, 185, 166);
     padding: 20px 0;
 }
 
